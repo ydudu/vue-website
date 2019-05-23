@@ -1,0 +1,5 @@
+// 设置设计图的宽度
+$rem: 37.5px;
+@function pxRem($px) {
+  @return ($px / $rem) + rem;
+}

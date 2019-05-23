@@ -1,0 +1,40 @@
+import Home from "@/views/home.vue";
+export default [
+    {
+        path: "/",
+        name: "home",
+        component: Home,
+        children: [
+            {
+                path:"/",
+                name: "mainPage",
+                component: () => import('@/views/mainPage.vue')
+            },
+            {
+                path:"/about",
+                name: "about",
+                component: () => import('@/views/about.vue')
+            },
+            {
+                path:"/oneArticle",
+                name: "oneArticle",
+                component: () => import('@/views/oneArticle.vue')
+            },
+            {
+                path: "/wallpaper",
+                name: "wallpaper",
+                component: () => import('@/views/wallpaper.vue')
+            },
+        ],
+    },
+    // {
+    //     path: "/about",
+    //     name: "about",
+    //     // route level code-splitting
+    //     // this generates a separate chunk (about.[hash].js) for this route
+    //     // which is lazy-loaded when the route is visited.
+    //     component: () =>
+    //         import(/* webpackChunkName: "about" */ "./views/About.vue")
+    // }
+]
+
