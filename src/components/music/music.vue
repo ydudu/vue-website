@@ -140,7 +140,7 @@
                 hotSongListIndex: 0,
                 hotId: "",
                 inputData: "",
-                inputValue: "",
+                inputValue: "周杰伦",
                 inputListUrl: [],
                 lrcList: [],
                 lrc: [], //歌词列表
@@ -170,7 +170,7 @@
             },
             //获取全部歌单
             getHotSongList () {
-                this.$ajax.get(`/apiHotSong/hotSongList?key=579621905&categoryId=10000000&sortId=3&limit=60`).then((res)=>{
+                this.$ajax.get(`https://api.itooi.cn/music/tencent/hotSongList?key=579621905&categoryId=10000000&sortId=3&limit=60`).then((res)=>{
                     this.hotSongList = res.data.data;
                     this.getMusic();
                     this.getSearch();
@@ -179,7 +179,7 @@
             },
             //获取歌单
             getMusic () {
-                this.$ajax.get(`/apiMusic/songList?key=579621905&id=${this.hotId || 6418529028}`).then((res)=>{
+                this.$ajax.get(`https://v1.itooi.cn/tencent/songList?key=579621905&id=${this.hotId || 6418529028}`).then((res)=>{
                     this.musicData = res.data.data;
                     const that = this;
                     that.music_Url = [];
@@ -190,9 +190,9 @@
                     that.lrcList = [];
                     that.resSongList = that.musicData[0].songlist;
                     that.resSongList.forEach((val)=>{
-                        that.music_Url.push(`/apiMusic/url?key=579621905&id=${val.mid}&br=192&quality=flac`);//
-                        that.songPicList.push(`/apiMusic/pic?id=${val.mid}&key=579621905`);
-                        that.lrcList.push(`/apiHotSong/lrc?id=${val.mid}&key=579621905`);
+                        that.music_Url.push(`https://v1.itooi.cn/tencent/url?key=579621905&id=${val.mid}&br=192&quality=flac`);//
+                        that.songPicList.push(`https://v1.itooi.cn/tencent/pic?id=${val.mid}&key=579621905`);
+                        that.lrcList.push(`https://api.itooi.cn/music/tencent/lrc?id=${val.mid}&key=579621905`);
                         that.musicSongName.push(val.name);
                         that.songCurrentDuration.push(val.interval);
                         val.singer.forEach((value)=>{
@@ -224,7 +224,7 @@
             },
             //搜索音乐
             getSearch () {
-                this.$ajax.get(`/apiHotSong/search?key=579621905&s=${this.inputValue}&limit=100&offset=0&type=song`).then((res)=>{
+                this.$ajax.get(`https://api.itooi.cn/music/tencent/search?key=579621905&s=${this.inputValue}&limit=100&offset=0&type=song`).then((res)=>{
                     this.inputData = res.data.data;
                     // console.log(this.inputData)
                     this.music_Url = [];
@@ -234,7 +234,7 @@
                     this.songSingerList = []; //歌手列表
                     this.lrcList = [];
                     this.inputData.forEach((val)=>{
-                        this.music_Url.push(`/apiMusic/url?key=579621905&id=${val.id}&br=192&quality=flac`);//
+                        this.music_Url.push(`https://v1.itooi.cn/tencent/url?key=579621905&id=${val.id}&br=192&quality=flac`);//
                         this.songPicList.push(val.pic);
                         this.musicSongName.push(val.name);
                         this.lrcList.push(val.lrc); //获取歌词url

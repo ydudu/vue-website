@@ -12,6 +12,8 @@
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
+    "express": "^4.17.0",
+    "http-proxy-middleware": "^0.19.1",
     "iview": "^3.3.3",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",

@@ -1,6 +1,6 @@
 const path = require('path');
 const resolve = dir => path.join(__dirname, dir);
-const BASE_URL = process.env.NODE_ENV === 'prodution' ? '/view-admin/ ' : './';
+const BASE_URL = process.env.NODE_ENV === 'prodution' ? './' : './';
 
 module.exports = {
     lintOnSave: false,

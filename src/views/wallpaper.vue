@@ -53,8 +53,8 @@
                 const that = this;
                 that.dataIf = true; //数据加载前loding为显示
                 this.$ajax.all([
-                    this.$ajax.get(`/api/index.php?c=WallPaperAndroid&a=getAppsByCategory&cid=${that.$route.query.id || 9}&start=0&count=26`),
-                    this.$ajax.get('/api/index.php?c=WallPaperAndroid&a=getAllCategories')
+                    this.$ajax.get(`https://bird.ioliu.cn/v1?url=http://wallpaper.apc.360.cn/index.php?c=WallPaperAndroid&a=getAppsByCategory&cid=${that.$route.query.id || 9}&start=0&count=26`),
+                    this.$ajax.get('https://bird.ioliu.cn/v1?url=http://wallpaper.apc.360.cn/index.php?c=WallPaperAndroid&a=getAllCategories')
                 ]).then(this.$ajax.spread(function(resGetUrl, resId){
                     that.items = resGetUrl.data;  //图片url路径
                     that.idI = resId.data.data; //图片id路径

@@ -12,7 +12,6 @@ import Viewer from 'v-viewer'
 import 'viewerjs/dist/viewer.css'
 import axios from 'axios'
 import VueLazyload from 'vue-lazyload' //懒加载插件
-
 import './assets/iconFont/iconfont' //svg图标引用js
 
 Vue.use(Viewer,{
@@ -24,6 +23,7 @@ Vue.use(Viewer,{
 Vue.use(VueLazyload)
 
 Vue.prototype.$ajax = axios;
+
 Vue.use(animated);
 Vue.config.productionTip = false;
 Vue.use(iView);
