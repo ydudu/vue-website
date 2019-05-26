@@ -8,22 +8,35 @@ export default [
             {
                 path:"/",
                 name: "mainPage",
-                component: () => import('@/views/mainPage.vue')
+                component: () => import('@/views/mainPage.vue'),
+                meta: {
+                    title: '主页'
+                }
+
             },
             {
                 path:"/about",
                 name: "about",
-                component: () => import('@/views/about.vue')
+                component: () => import('@/views/about.vue'),
+                meta: {
+                    title: '关于本站'
+                }
             },
             {
                 path:"/oneArticle",
                 name: "oneArticle",
-                component: () => import('@/views/oneArticle.vue')
+                component: () => import('@/views/oneArticle.vue'),
+                meta: {
+                    title: '文章'
+                }
             },
             {
                 path: "/wallpaper",
                 name: "wallpaper",
-                component: () => import('@/views/wallpaper.vue')
+                component: () => import('@/views/wallpaper.vue'),
+                meta: {
+                    title: '图片'
+                }
             },
         ],
     },

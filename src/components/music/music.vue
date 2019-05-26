@@ -545,7 +545,7 @@
                            overflow: hidden;
                            text-overflow: ellipsis;
                            @media screen and(max-width: 576px){
-                               width: 80px;
+                               width: 120px;
                            }
                        }
                        .control-btn{

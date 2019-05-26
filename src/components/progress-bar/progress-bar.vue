@@ -116,12 +116,12 @@
             margin-right: 5px;
             cursor: pointer;
             height: 4px;
-            width: 400px;
+            width: 600px;
             @media screen and(max-width: 768px){
                 width: 300px;
             }
             @media screen and(max-width: 576px){
-                width: 150px;
+                width: 200px;
             }
             background: #ccc;
             .progress{

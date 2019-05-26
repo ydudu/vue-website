@@ -86,7 +86,8 @@
                     <Col :xs="24" :md="16">
                         <div class="reader reader-me">
                             <h2>FOR DREAM</h2>
-                            <p>很庆幸无数次的跌倒没有放弃过，它教会了我一个道理，不断的积累，才能铸就那个最好的自己，就如同那句话，不积跬步无以至千里。</p>
+                            <p>用代码编织生活，是件美好的事情，当你把热情投入到那份你喜爱的事情上，慢慢的生活因为你而偷偷的改变，不知不觉你就是那个缔造者。我热爱生活，热爱白天与黑夜，热爱用代码栓释不一样的青春。
+                            </p>
                         </div>
                     </Col>
                 </div>
@@ -98,8 +99,9 @@
                     <Col :xs="24" :md="16">
                         <div class="reader reader-me">
                             <h2>ABOUT</h2>
-                            <p>用代码编织生活，是多么美好的事情，当你把热情投入到那份你喜爱的事情上，慢慢的生活因为你而偷偷的改变，不知不觉你就是那个缔造者。我热爱生活，热爱白天与黑夜，热爱用代码栓释不一样的青春。
-                                <a style="color: yellow" href="https://ydudu.github.io/my-website" target="_blank">简历</a>
+                            <p>
+                                很庆幸无数次的跌倒没有放弃过，它教会了我一个道理，不断的积累，才能铸就那个最好的自己，不积跬步无以至千里。
+                                <a style="color: yellow" href="https://ydudu.github.io/my-website" target="_blank">在线简历</a>
                             </p>
                         </div>
                     </Col>
