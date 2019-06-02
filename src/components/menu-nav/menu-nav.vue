@@ -44,6 +44,10 @@
                         <Icon type="ios-construct" />
                         {{contact.title}}
                     </MenuItem>
+                    <MenuItem name="7" to="/message">
+                        <Icon type="ios-create-outline" />
+                        {{message.title}}
+                    </MenuItem>
                 </Menu>
             </Col>
             <!--//屏幕小于992px-->
@@ -95,6 +99,10 @@
                                 <Icon type="ios-construct"></Icon>
                                 <span>{{contact.title}}</span>
                             </MenuItem>
+                            <MenuItem name="5-7" to="/message">
+                                <Icon type="ios-create-outline" />
+                                {{message.title}}
+                            </MenuItem>
                         </Menu>
                     </div>
                 </Layout>
@@ -129,7 +137,8 @@
                 other: state => state.menu.other,
                 contact: state => state.menu.contact,
                 notes: state => state.menu.notes,
-                music: state => state.menu.music
+                music: state => state.menu.music,
+                message: state => state.menu.message
             })
         }
     }
@@ -171,7 +180,7 @@
                                     display: block;
                                     width: 34px;
                                     height: 3px;
-                                    background: #e96147;
+                                    background: #fff;
                                     transition-duration: 0.4s;
                                 }
                                 .top{

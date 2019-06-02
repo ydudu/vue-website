@@ -3,16 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="shine ,web前端, 前端工程师简历, 前端开发, 个人网站, 前端培训, web前端开发, 前端工程师, vue个人网站" />
+    <meta name="description" content="shine个人网站" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>Hello Everyone</title>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but vue-website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
   </body>
 </html>

@@ -35,7 +35,11 @@ const state = {
         music: {
             name: '5',
             title: '音乐'
-        }
+        },
+        message: {
+            name: '6',
+            title: '留言'
+        },
     }
 }
 export default state

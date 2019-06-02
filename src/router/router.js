@@ -38,6 +38,14 @@ export default [
                     title: '图片'
                 }
             },
+            {
+                path: "/message",
+                name: "message",
+                component: () => import('@/views/message.vue'),
+                meta: {
+                    title: '留言'
+                }
+            },
         ],
     },
     // {
