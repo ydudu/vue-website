@@ -17,10 +17,7 @@
     "iview": "^3.3.3",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
-<<<<<<< HEAD
     "prerender-spa-plugin": "^3.4.0",
-=======
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
     "v-viewer": "^1.4.0",
     "vue": "^2.6.6",
     "vue-lazyload": "^1.2.6",
@@ -41,11 +38,7 @@
     "fibers": "^3.1.1",
     "sass": "^1.17.2",
     "sass-loader": "^7.1.0",
-<<<<<<< HEAD
     "vue-template-compiler": "^2.5.21",
     "webpack-dev-server": "^3.1.5"
-=======
-    "vue-template-compiler": "^2.5.21"
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
   }
 }

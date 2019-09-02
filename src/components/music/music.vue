@@ -12,33 +12,19 @@
                     <span class="singerName">歌名</span>
                     <span class="singer">歌手</span>
                 </p>
-<<<<<<< HEAD
                 <Option v-for="(option, index) in inputData.list" :value="option.songname"  :key="option.id" @click.native="playListMusic(index)">
                     <span class="singerName">{{ option.songname }}</span>
                     <span class="singer">{{ option.singer[0].name }}</span>
-=======
-                <Option v-for="(option, index) in inputData" :value="option.name"  :key="option.id" @click.native="playListMusic(index)">
-                    <span class="singerName">{{ option.name }}</span>
-                    <span class="singer">{{ option.singer }}</span>
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                 </Option>
             </div>
         </AutoComplete>
         <div class="hotSongList animated fadeIn" v-if="!value2">
             <Row :gutter="12">
-<<<<<<< HEAD
                 <Col class="col-li" :lg="4" :md="6" :sm="8" :xs="12" v-for="(hotSong, index) in hotSongList.list" :key="hotSong.id">
                     <img v-lazy="hotSong.imgurl" :key="hotSong.name" @click="handleEnterLive(index)">
                     <h4>{{hotSong.dissname}}</h4>
                     <p>{{hotSong.creator.name}}</p>
                     <p>播放量: {{hotSong.listennum}}</p>
-=======
-                <Col class="col-li" :lg="4" :md="6" :sm="8" :xs="12" v-for="(hotSong, index) in hotSongList" :key="hotSong.id">
-                    <img v-lazy="hotSong.pic" :key="hotSong.name" @click="handleEnterLive(index)">
-                    <h4>{{hotSong.name}}</h4>
-                    <p>{{hotSong.creator}}</p>
-                    <p>播放量: {{hotSong.playCount}}</p>
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                 </Col>
             </Row>
         </div>
@@ -105,20 +91,12 @@
             </div>
             <audio  ref="audio" class="audio"  @timeupdate="upDateTime"></audio>
         </div>
-<<<<<<< HEAD
         <!-- 歌词界面显示与隐藏 -->
         <transition name="fade"
                     enter-active-class="animated fadeIn"
                     leave-active-class="animated fadeOut"
         >
             <div class="lrc-wrapper "  v-if="lrcShow">
-=======
-        <transition name="fade"
-                    enter-active-class="animated zoomIn"
-                    leave-active-class="animated zoomOut"
-        >
-            <div class="lrc-wrapper "  v-show="lrcShow">
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                 <div class="lrc-back" @click="lrcShow = false">
                     <Icon type="ios-arrow-back" :size="26"/>
                 </div>
@@ -136,10 +114,7 @@
 
 <script>
     import progressBar from '../progress-bar/progress-bar'
-<<<<<<< HEAD
     import {getAllListHot,songList,search} from '../../api/api.js'
-=======
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
     export default {
         name: "music",
         components: { progressBar},
@@ -167,11 +142,7 @@
                 hotSongListIndex: 0,
                 hotId: "",
                 inputData: "",
-<<<<<<< HEAD
                 inputValue: "",
-=======
-                inputValue: "周杰伦",
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                 inputListUrl: [],
                 lrcList: [],
                 lrc: [], //歌词列表
@@ -189,11 +160,7 @@
             handleEnterLive(index) {
                 this.playFlag = false;
                 this.hotSongListIndex = index;
-<<<<<<< HEAD
                 this.hotId = this.hotSongList.list[this.hotSongListIndex].dissid;
-=======
-                this.hotId = this.hotSongList[this.hotSongListIndex].id;
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                 this.value2 = !this.value2;
                 document.querySelector(".ivu-drawer-body").scrollTop = 0;
                 this.getMusic()
@@ -205,14 +172,9 @@
             },
             //获取全部歌单
             getHotSongList () {
-<<<<<<< HEAD
                 getAllListHot().then((res)=>{
                     this.hotSongList = res.data.data;
                     // console.log(this.hotSongList);
-=======
-                this.$ajax.get(`https://api.itooi.cn/music/tencent/hotSongList?key=579621905&categoryId=10000000&sortId=3&limit=60`).then((res)=>{
-                    this.hotSongList = res.data.data;
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                     this.getMusic();
                     this.getSearch();
                      // console.log(this.hotSongList)
@@ -220,13 +182,8 @@
             },
             //获取歌单
             getMusic () {
-<<<<<<< HEAD
                  songList(this.hotId).then((res)=>{
                     this.musicData = res.data.data;              
-=======
-                this.$ajax.get(`https://v1.itooi.cn/tencent/songList?key=579621905&id=${this.hotId || 6418529028}`).then((res)=>{
-                    this.musicData = res.data.data;
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                     const that = this;
                     that.music_Url = [];
                     that.musicSongName = [];
@@ -236,15 +193,9 @@
                     that.lrcList = [];
                     that.resSongList = that.musicData[0].songlist;
                     that.resSongList.forEach((val)=>{
-<<<<<<< HEAD
                         that.music_Url.push(`https://v1.itooi.cn/tencent/url?id=${val.mid}&quality=192`);//
                         that.songPicList.push(`https://v1.itooi.cn/tencent/pic?id=${val.mid}`);
                         that.lrcList.push(`https://v1.itooi.cn/tencent/lrc?id=${val.mid}`);
-=======
-                        that.music_Url.push(`https://v1.itooi.cn/tencent/url?key=579621905&id=${val.mid}&br=192&quality=flac`);//
-                        that.songPicList.push(`https://v1.itooi.cn/tencent/pic?id=${val.mid}&key=579621905`);
-                        that.lrcList.push(`https://api.itooi.cn/music/tencent/lrc?id=${val.mid}&key=579621905`);
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                         that.musicSongName.push(val.name);
                         that.songCurrentDuration.push(val.interval);
                         val.singer.forEach((value)=>{
@@ -274,27 +225,18 @@
                     console.log(err)
                 })
             },
-<<<<<<< HEAD
           
             //搜索音乐
             getSearch () {
                 search(this.inputValue).then((res)=>{
                     this.inputData = res.data.data;
                     //  console.log(this.inputData.list)
-=======
-            //搜索音乐
-            getSearch () {
-                this.$ajax.get(`https://api.itooi.cn/music/tencent/search?key=579621905&s=${this.inputValue}&limit=100&offset=0&type=song`).then((res)=>{
-                    this.inputData = res.data.data;
-                    // console.log(this.inputData)
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                     this.music_Url = [];
                     this.musicSongName = [];
                     this.songCurrentDuration = [];
                     this.songPicList = []; //封面列表
                     this.songSingerList = []; //歌手列表
                     this.lrcList = [];
-<<<<<<< HEAD
                     this.inputData.list.forEach((val)=>{
                         this.music_Url.push(`https://v1.itooi.cn/tencent/url?id=${val.songmid}&quality=192`);//
                         this.songPicList.push(`https://v1.itooi.cn/tencent/pic?id=${val.songmid}`);
@@ -302,15 +244,6 @@
                         this.lrcList.push(`https://v1.itooi.cn/tencent/lrc?id=${val.songmid}`); //获取歌词url
                         this.songCurrentDuration.push(val.interval);
                         this.songSingerList.push(val.singer[0].name);
-=======
-                    this.inputData.forEach((val)=>{
-                        this.music_Url.push(`https://v1.itooi.cn/tencent/url?key=579621905&id=${val.id}&br=192&quality=flac`);//
-                        this.songPicList.push(val.pic);
-                        this.musicSongName.push(val.name);
-                        this.lrcList.push(val.lrc); //获取歌词url
-                        this.songCurrentDuration.push(val.time);
-                        this.songSingerList.push(val.singer);
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                     })
                 })
             },
@@ -426,261 +359,5 @@
     }
 </script>
 <style lang="scss">
-<<<<<<< HEAD
     @import './music.scss'
-=======
-    .music-wrapper{
-        .inputSearch{
-            position: fixed;
-            top: 12px;
-            z-index: 1000;
-            margin-left: 70px;
-            @media screen and(max-width: 576px){
-                width: 200px!important;
-            }
-            .ivu-select-dropdown,.ivu-auto-complete{
-                width: 250px;
-                top: 30px!important;
-                left: 0!important;
-            }
-            .singerMessage{
-                padding: 7px 16px;
-                .singerName{
-                    width: 120px;
-                    color: #000;
-                }
-                .singer{
-                    padding-left: 4px;
-                    text-align: left;
-                    color: #000;
-                }
-            }
-            .singerName{
-                width: 120px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: inline-block;
-            }
-            .singer{
-                padding-left: 4px;
-                color: green;
-                height: 100%;
-                display: inline-block;
-            }
-        }
-        .hotSongList{
-            min-height: 85vh;
-            .col-li{
-                height: 300px;
-                @media screen and(max-width: 992px){
-                    height: 300px
-                }
-                @media screen and(max-width: 768px){
-                    height: 300px;
-                }
-                @media screen and(max-width: 576px){
-                     height: 300px
-                }
-                @media screen and(max-width: 425px){
-                     height: 250px
-                }
-                img{
-                    width: 100%;
-                    cursor: pointer;
-                }
-                h4{
-                    color: #000;
-                    font-size: 14px;
-                    line-height: 20px;
-                }
-                p{
-                    color: #999;
-                    line-height: 20px;
-                }
-            }
-        }
-        .musicList{
-            .back{
-                position: fixed;
-                width: 100px;
-                height: 30px;
-                cursor: pointer;
-                top: 14px;
-                padding-left: 40px;
-                color: #2baee9;
-                z-index: 1000;
-            }
-            .music-body-ul{
-                &-names{
-                    line-height: 30px;
-                    color: #999;
-                    position: relative;
-                    width: 350px;
-                }
-                .theme-title{
-                    height: 150px;
-                    padding: 10px;
-                    position: relative;
-                    img{
-                        position: absolute;
-                        left: 0;
-                    }
-                    .theme-title-p{
-                        position: absolute;
-                        left: 120px;
-                        font-size: 20px;
-                        @media screen and(max-width: 576px){
-                            font-size: 14px;
-                            left: 105px;
-                        }
-                    }
-                }
-                .music-body-li{
-                    line-height: 30px;
-                    color: #000;
-                    width: 350px;
-                    &:hover{
-                        background: #2baee9;
-                        cursor: pointer;
-                    }
-                }
-                .music-default{
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    display: inline-block;
-                    &:hover{
-                        word-break:break-all; white-space: pre-wrap;  text-decoration: none
-                    }
-                }
-                .music-name{
-                    width:50%;
-                }
-                .music-author{
-                    width: 40%;
-                }
-                .music-time{
-                    width: 10%;
-                }
-            }
-        }
-        .audio-wrapper-bottom{
-            position: fixed;
-            width: 100%;
-            min-height: 15vh;
-            bottom: 0;
-            margin-left: -16px;
-            background: #11d67a;
-            @media screen and(max-width: 576px){
-                min-height: 12vh;
-            }
-            .audio-music{
-                 position: relative;
-                 width: 100%;
-                .pic-wrapper{
-                    position: absolute;
-                    left: 2px;
-                    width: 80px;
-                    height: 80px;
-                    padding: 6px;
-                    cursor: pointer;
-                    animation: rotateImg 8s infinite linear;
-                    @media screen and(max-width: 576px){
-                        height: 60px;
-                        width: 60px;
-                    }
-                    img{
-                        width: 100%;
-                        border-radius: 50%;
-                    }
-                }
-                @keyframes rotateImg {
-                    from{
-                        transform: rotateZ(0deg);
-                    }to{
-                        transform: rotateZ(360deg);
-                                         }
-                }
-                .control-list{
-                    position: absolute;
-                    left: 100px;
-                    height: 100px;
-                    padding-top: 16px;
-                    @media screen and(max-width: 576px){
-                        left: 60px;
-                        padding-top: 5px;
-                    }
-                    .control{
-                        position: relative;
-                       .songType{
-                           position: absolute;
-                           white-space: nowrap;
-                           overflow: hidden;
-                           text-overflow: ellipsis;
-                           @media screen and(max-width: 576px){
-                               width: 120px;
-                           }
-                       }
-                       .control-btn{
-                           position: absolute;
-                           right: 10px;
-                               .backward,.pause,.forward{
-                                   cursor: pointer;
-                                   border: 1px solid #fff;
-                                   padding: 2px;
-                                   border-radius: 50%;
-                               }
-                               .backward{
-                                   display: inline-block;
-                               }
-                               .pause{
-                                   display: inline-block;
-                                   margin-left: 15px;
-                               }
-                               .forward{
-                                   display: inline-block;
-                                   margin-left: 15px;
-                               }
-                       }
-                    }
-                }
-            }
-        }
-        .lrc-wrapper{
-            position: fixed;
-            background: rgba(0,0,0,.8);
-            color: #fff;
-            bottom:0;
-            overflow-y: scroll;
-            width: 100%;
-            z-index: 1001;
-            margin-left: -16px;
-            margin-bottom: 15vh;
-            .lrc-back{
-                position: fixed;
-                z-index: 10002;
-                top: 15px;
-                left: 15px;
-                cursor: pointer;
-            }
-            .lrc-div{
-                position: relative;
-                height: 85vh;
-                ul{
-                    li{
-                        line-height: 30px;
-                        height: 30px;
-                        text-align: center;
-                        font-size: 14px;
-                    }
-                }
-            }
-            @media screen and(max-width: 576px){
-                min-height: 88vh;
-                margin-bottom: 12vh;
-            }
-        }
-    }
->>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
 </style>
