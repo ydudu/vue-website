@@ -34,6 +34,7 @@
         .about-website{
             width: 85%;
             margin: 0 auto;
+            align-self: auto;
             padding: 120px 10px;
             min-height: 100vh;
             position: relative;
