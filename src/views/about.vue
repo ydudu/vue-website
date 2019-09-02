@@ -35,6 +35,7 @@
             width: 85%;
             margin: 0 auto;
             padding: 120px 10px;
+            background: none;
             min-height: 100vh;
             position: relative;
             p{
