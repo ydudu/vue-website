@@ -17,9 +17,14 @@
                             {{other.title}}
                         </template>
                         <MenuGroup>
+<<<<<<< HEAD
                             <MenuItem name="4" to="/about">
                               
                                 {{contact.title}}
+=======
+                            <MenuItem name="3-1">
+                                <a href="https://ydudu.github.io/my-website" target="_blank">简历</a>
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                             </MenuItem>
                             <MenuItem name="3-2">
                                 <a href="https://github.com/ydudu" target="_blank">{{ other.github.title }}</a>
@@ -37,6 +42,7 @@
                         <Icon type="ios-musical-notes" />
                         <span>{{music.title}}</span>
                     </MenuItem>
+<<<<<<< HEAD
                     <Drawer title="Music" :scrollable="false" v-model="value1" width="100">
                         <Music v-if="value1">
                         </Music>
@@ -45,6 +51,15 @@
                         <a class="resume-a" href="https://ydudu.github.io/my-website" target="_blank">
                             <Icon type="ios-construct" /> 简历
                         </a>
+=======
+                    <Drawer title="Music" :scrollable="true" v-model="value1" width="100">
+                        <music>
+                        </music>
+                    </Drawer>
+                    <MenuItem name="4" to="/about">
+                        <Icon type="ios-construct" />
+                        {{contact.title}}
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                     </MenuItem>
                     <MenuItem name="7" to="/message">
                         <Icon type="ios-create-outline" />
@@ -79,8 +94,13 @@
                                     <Icon type="ios-pricetags" />
                                     {{other.title}}
                                 </template>
+<<<<<<< HEAD
                                 <MenuItem name="4" to="/about">
                                     {{contact.title}}
+=======
+                                <MenuItem name="6-5">
+                                    <a href="https://ydudu.github.io/my-website" target="_blank">简历</a>
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                                 </MenuItem>
                                 <MenuItem name="6-3">
                                     <a href="https://github.com/ydudu" target="_blank">{{ other.github.title }}</a>
@@ -97,10 +117,16 @@
                                 <Icon type="ios-musical-notes" />
                                 <span>{{music.title}}</span>
                             </MenuItem>
+<<<<<<< HEAD
                             <MenuItem name="5-6">
                                 <a href="https://ydudu.github.io/my-website" target="_blank">
                                     <Icon type="ios-construct" /> 简历
                                 </a>
+=======
+                            <MenuItem name="5-3" to="/about">
+                                <Icon type="ios-construct"></Icon>
+                                <span>{{contact.title}}</span>
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                             </MenuItem>
                             <MenuItem name="5-7" to="/message">
                                 <Icon type="ios-create-outline" />
@@ -116,9 +142,16 @@
 <script>
     import vue from 'vue'
     import {mapState} from 'vuex'
+<<<<<<< HEAD
     // import Music from '../music/music'
     export default {
         name: "home",
+=======
+    import Music from '../music/music'
+    export default {
+        name: "home",
+        components: { Music },
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
         data () {
             return {
                 isCollapsed: true,
@@ -126,9 +159,12 @@
                 value1: false
             }
         },
+<<<<<<< HEAD
         components: { 
             Music:() =>import('../music/music.vue')  
         },
+=======
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
         methods: {
             handleRotate () {
                 this.isCollapsed = !this.isCollapsed;
@@ -156,20 +192,26 @@
                     .ivu-menu{
                         height: 50px;
                         line-height: 50px;
+<<<<<<< HEAD
                         padding-left: 100px;
                         box-sizing: border-box;
+=======
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                         .ivu-menu-item-group-title{
                             display: none;
                         }
                         a{
                             display: block;
                         }
+<<<<<<< HEAD
                         .resume-a{
                             color: rgba(255, 255, 255, 0.7);
                             &:hover{
                                 color: #fff;
                             }
                         }
+=======
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                     }
                 }
                 .ivu-col-span-xs-24{
@@ -242,10 +284,13 @@
                             .ivu-menu-light,.ivu-menu-vertical,.ivu-menu-item-active:not(.ivu-menu-submenu){
                                 background: #4ead71;
                             }
+<<<<<<< HEAD
                             a{
                                 display: block;
                                 color: #fff;
                             }
+=======
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
                             .ivu-menu-submenu{
                                 .ivu-menu-submenu-title{
                                     color: #fff

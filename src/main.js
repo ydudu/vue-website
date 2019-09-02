@@ -12,8 +12,12 @@ import Viewer from 'v-viewer'
 import 'viewerjs/dist/viewer.css'
 import axios from 'axios'
 import VueLazyload from 'vue-lazyload' //懒加载插件
+<<<<<<< HEAD
 import './assets/iconFont/iconfont.js' //svg图标引用js
 
+=======
+import './assets/iconFont/iconfont' //svg图标引用js
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
 
 Vue.use(Viewer,{
     defaultOptions: {
@@ -21,7 +25,11 @@ Vue.use(Viewer,{
     }
 });
 
+<<<<<<< HEAD
 Vue.use(VueLazyload);
+=======
+Vue.use(VueLazyload)
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
 
 Vue.prototype.$ajax = axios;
 
@@ -58,6 +66,7 @@ window._hmt = _hmt; // 必须把_hmt挂载到window下，否则找不到
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hm, s);
 })();
+<<<<<<< HEAD
 //百度推送
 (function(){
     var bp = document.createElement('script');
@@ -71,13 +80,19 @@ window._hmt = _hmt; // 必须把_hmt挂载到window下，否则找不到
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
+=======
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
 
 new Vue({
     router,
     store,
+<<<<<<< HEAD
     render: h => h(App),
     // mounted() {
     //     document.dispatchEvent(new Event('render-event'));
     // }
 
+=======
+    render: h => h(App)
+>>>>>>> d2fd02b525bce03a4af91a1c16cfc8539181fde2
 }).$mount("#app");
