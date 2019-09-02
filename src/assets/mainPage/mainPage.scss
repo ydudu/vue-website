@@ -1,0 +1,313 @@
+$border: 1px solid #ccc;
+
+.wrapper{
+    margin-top: -50px;
+    @media screen and(max-width: 768px){
+        
+    }
+    .wea{
+        text-align: left;
+        vertical-align: middle;
+        margin-top: 60px;
+        margin-left: 107px;
+        margin-bottom: .2em;
+        font-size: 16px;
+        color: #000;
+        height: 40px;
+        line-height: 50px;
+        @media screen and(max-width: 576px){
+            margin-left: 22px;
+        }
+        .span-box{
+            color:yellow;
+        }
+     
+    }
+    .border-wrapper{
+        position: relative;
+        height: 50px;
+        margin-bottom: 20px;
+        margin-left: 107px;
+        margin-right: 107px;
+        color: #fff;
+        height: 1px;
+        background: #000 linear-gradient(to left, #4cd964, #49aad6, #a9d14b, #34aadc, #fafafc, #ff2d55);
+        @media screen and(max-width: 576px){
+            margin-left: 22px;
+            margin-right: 22px;
+        }
+    }
+    .ivu-row{
+        min-height: 50vh;
+        margin-left: 0!important;
+        margin-right: 0!important;
+        padding-left: 100px;
+        padding-right: 100px;
+        @media screen and(max-width: 576px){
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .ivu-col-span-lg-18{
+            .block-wrapper{
+                background: rgba(0,0,0,.2);
+                margin-bottom: 4.875em;
+                overflow: hidden;
+                .block{
+                    height: 200px;
+                    position: relative;
+                    vertical-align: middle;
+                    transition: all .35s;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    @media screen and(max-width: 576px){
+                        height: 120px;
+                    }
+                    .svg-box{
+                        position: absolute;
+                        top: 50%;
+                        width: 100%;
+                        transform: translateY(-25px);
+                        .svgIcon{
+                            color: #fff;
+                            width: 50px;
+                            height: 50px;
+                            fill: currentColor;
+                            @media screen and(max-width: 576px){
+                                width: 35px;
+                                height: 35px;
+                            }
+                        }
+                        p{
+                            color: #fff;
+                            font-size: 15px;
+                            text-align: center;
+                            word-wrap:break-word;
+                            word-break:break-all;
+                            @media screen and(max-width: 576px){
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+                .block1{
+                    border-right: $border;
+                    border-bottom: $border;
+                    &:hover{
+                        background: #56d673;
+                    }
+                }
+                .block2{
+                    border-bottom: $border;
+                    &:hover{
+                        background: #4a6e9f;
+                    }
+                }
+                .block3{
+                    border-left: $border;
+                    border-bottom: $border;
+                    &:hover{
+                        background: #d6d113;
+                    }
+                }
+                .block4{
+                    border-right: $border;
+                    &:hover{
+                        background: #d64183;
+                    }
+                }
+                .block5{
+                    background: url('../assets/img/pazhe1.png') center/cover no-repeat;
+                    background-size: 90%;
+                    @media screen and(min-width: 576px){
+                        background-size: 70%;
+                    }
+                }
+                .block6{
+                    border-left: $border;
+                    &:hover{
+                        background: #807ebe;
+                    }
+                }
+                .block7{
+                    border-right: $border;
+                    border-top: $border;
+                    &:hover{
+                        background: #d62214;
+                    }
+                }
+                .block8{
+                    border-top: $border;
+                    &:hover{
+                        background: #11d67a;
+                    }
+                }
+                .block9{
+                    border-top: $border;
+                    border-left: $border;
+                    &:hover{
+                        background: #1b89d6;
+                    }
+                }
+                .reader{
+                    height: 240px;
+                    &-img-bg1{
+                        background: url(https://up.enterdesk.com/edpic_source/9d/af/53/9daf53b2b9fef91432559245fa569a6a.jpg) center/cover;
+                    }
+                    &-img-bg2{
+                        background: url(https://dwz.cn/N8ED9YRB) center/cover;
+                    }
+                    &-me{
+                        color: #fff;
+                        padding: 22px;
+                        background-color: rgba(0, 0, 0, 0.1);
+                        p{
+                            font-size: 14px;
+                            text-align: left;
+                            line-height: 26px;
+                            @media screen and(max-width: 576px){
+                                line-height: 22px;
+                            }
+                        }
+                        h2{
+                            font-size: 26px;
+                            text-align: left;
+                            line-height: 36px;
+                            font-weight: 600;
+                            color: #ffff00;
+                            position: relative;
+                            &:after{
+                                content: "";
+                                width: 80px;
+                                height: 4px;
+                                background: yellow;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ivu-col-span-lg-6{
+            .ivu-card{
+                margin-bottom: 4.2em;
+                background: rgba(0,0,0,.2);
+                border: transparent;
+                &-head{
+                    border-bottom: none;
+                    p{
+                        font-size: 20px;
+                        position: relative;
+                        color: #fff;
+                        text-align: left;
+                    }
+                }
+                &-body{
+                    p{
+                        line-height: 28px;
+                        text-align: left;
+                        font-size:14px;
+                        color: #fff;
+                    }
+                }
+                .introduce-bg-wrapper{
+                    overflow: hidden;
+                    .introduce-bg{
+                        cursor: pointer;
+                        width: 100%;
+                        height: 100%;
+                        transition: all .4s;
+                        &:hover{
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+              
+            }
+            .card1{
+                height: 600px;
+                @media screen and(max-width: 995px){
+                     height: auto
+                 }
+            }
+            .card2{
+                height: 540px;
+                @media screen and(max-width: 995px){
+                     height: auto
+                 }
+            }
+        }
+    }
+    .end-wrapper{
+        .end-colWrapper{
+            .ivu-col-span-lg-8{
+                .end-bar{
+                    min-height: 30vh;
+                    margin-bottom: 10px;
+                    background: rgba(255,255,255,0.5);
+                    font-size: 16px;
+                    color: #000
+                }
+            }
+        }
+    }     
+    .end-about{
+        min-height: 40vh;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        .about-bar{
+            background: none;
+            .about-title{
+                line-height: 1.3em;
+                margin-top: 0px;
+                font-family: Roboto;
+                margin-bottom: 5px;
+                font-weight: lighter;
+                font-size: 50px;
+                color: rgb(74, 134, 232)
+            }
+            h2{
+                font-size: 24px;
+                line-height: 24px;
+                color: #54aae4;
+                padding-bottom: 12px;
+            }
+            p{
+                line-height: 1.7em;
+                font-size: 14px;
+                color: #d8dee2;
+            }
+        }
+        .creat{
+            display: flex;
+            justify-content: center;
+            padding-top: 26px;
+            line-height: 60px;
+            .creat-left{
+                flex: 0 0 100px;
+                font-size: 24px;
+                padding: 20px auto 20px;
+                color: #39bb4f;
+                border-right: 1px solid rgb(141, 138, 138);
+
+            }
+            .creat-right{
+                font-size: 24px;
+                flex: 0 0 100px;
+                color: #c98e0f;
+            }
+        }
+    }   
+}
+.wrapper:before {
+    content: ' ';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('../assets/img/bg_01.jpg') center 0 no-repeat;//../assets/img/banner_thumb_1.jpg   https://dwz.cn/ZiMTLl8f https://dwz.cn/spqyjOMz
+    background-size: cover;
+}
