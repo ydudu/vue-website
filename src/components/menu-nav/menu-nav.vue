@@ -50,8 +50,16 @@
                         <Icon type="ios-create-outline" />
                         {{message.title}}
                     </MenuItem>
+                    <div style="position: relative;">
+                        <ButtonGroup shape="circle">
+                            <Button type="success" ghost @click.native="loginChange">登录</Button>
+                            <Button type="info" ghost @click.native="regin">注册</Button>
+                         </ButtonGroup>
+                    </div>
                 </Menu>
             </Col>
+            <login :show="show" @isShow="acceptIsShow"></login>
+
             <!--//屏幕小于992px-->
             <Col :xs="24" :md="0">
                 <Layout>
@@ -106,6 +114,12 @@
                                 <Icon type="ios-create-outline" />
                                 {{message.title}}
                             </MenuItem>
+                            <MenuItem name="5-8" @click.native="loginChange">
+                               登录
+                            </MenuItem>
+                            <MenuItem name="5-9" @click.native="regin">
+                               注册
+                            </MenuItem>
                         </Menu>
                     </div>
                 </Layout>
@@ -115,6 +129,7 @@
 </template>
 <script>
     import vue from 'vue'
+    import login from '../login/login'
     import {mapState} from 'vuex'
     // import Music from '../music/music'
     export default {
@@ -123,15 +138,32 @@
             return {
                 isCollapsed: true,
                 logo: '',
-                value1: false
+                value1: false,
+                show: false,
             }
         },
+        computed: {
+           
+        },
         components: { 
-            Music:() =>import('../music/music.vue')  
+            Music:() =>import('../music/music.vue')  ,
+            login
         },
         methods: {
             handleRotate () {
                 this.isCollapsed = !this.isCollapsed;
+            },
+            loginChange() {
+                this.show = true
+            },
+            acceptIsShow(e) {
+                 this.show = e
+            },
+            regin() {
+                this.$Modal.warning({
+                     title: '注册正在开发',
+                    //  content: '用户名或密码错误'
+                })
             }
 
         },
@@ -157,6 +189,7 @@
                         height: 50px;
                         line-height: 50px;
                         padding-left: 100px;
+                        padding-right: 100px;
                         box-sizing: border-box;
                         .ivu-menu-item-group-title{
                             display: none;
