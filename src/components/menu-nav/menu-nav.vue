@@ -50,16 +50,28 @@
                         <Icon type="ios-create-outline" />
                         {{message.title}}
                     </MenuItem>
-                    <MenuItem name="8" style="position: relative;" class="item-login">
+                    <MenuItem name="8" style="position: relative;" class="item-login" v-if="logShow">
                         <ButtonGroup shape="circle">
                             <Button type="success" ghost @click.native="loginChange">登录</Button>
                             <Button type="info" ghost @click.native="regin">注册</Button>
                          </ButtonGroup>
                     </MenuItem>
+                    <MenuItem name="9" class="item-login" v-if="!logShow">
+                        <Dropdown>
+                            <a href="javascript:void(0)" >
+                                个人中心
+                                <Icon type="ios-arrow-down"></Icon>
+                            </a>
+                            <DropdownMenu slot="list">
+                                <DropdownItem>修改资料</DropdownItem>
+                                <DropdownItem @click.native="singOut">退出登录</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
+                    </MenuItem>   
                 </Menu>
             </Col>
-            <login :show="show" @isShow="acceptIsShow"></login>
 
+            <login :show="show" @isShow="acceptIsShow" @logShow="changeLog"></login>
             <!--//屏幕小于992px-->
             <Col :xs="24" :md="0">
                 <Layout>
@@ -114,12 +126,24 @@
                                 <Icon type="ios-create-outline" />
                                 {{message.title}}
                             </MenuItem>
-                            <MenuItem name="5-8" @click.native="loginChange">
+                            <MenuItem name="5-8" @click.native="loginChange" v-if="logShow">
                                登录
                             </MenuItem>
-                            <MenuItem name="5-9" @click.native="regin">
+                            <MenuItem name="5-9" @click.native="regin" v-if="logShow">
                                注册
                             </MenuItem>
+                            <div v-if="!logShow">
+                                <a style="height:50px; line-height:50px" href="javascript:void(0)">
+                                   个人中心
+                                   <Icon type="ios-arrow-down"></Icon>
+                                </a> 
+                                <MenuItem name="5-11">
+                                    修改资料
+                                </MenuItem>
+                                <MenuItem name="5-12" @click.native="singOut" >
+                                    退出登录
+                                </MenuItem>
+                            </div>  
                         </Menu>
                     </div>
                 </Layout>
@@ -140,6 +164,7 @@
                 logo: '',
                 value1: false,
                 show: false,
+                logShow: true,
             }
         },
         computed: {
@@ -156,16 +181,25 @@
             loginChange() {
                 this.show = true
             },
+            //登录成功和点击删掉都会执行
             acceptIsShow(e) {
                  this.show = e
+            },
+            //登录成功隐藏掉登录注册界面，显示个人中心
+            changeLog(e){
+                this.logShow = e
             },
             regin() {
                 this.$Modal.warning({
                      title: '注册正在开发',
                     //  content: '用户名或密码错误'
                 })
+            },
+            //退出登录
+            singOut() {
+                this.logShow = true
+                this.show = true
             }
-
         },
         computed: {
             ...mapState({
@@ -269,7 +303,7 @@
                             left: 0;
                             margin-top: -50px;
                             padding-top: 45px;
-                            background: #333;
+                            background: rgb(54, 58, 58);
                             transition: all .4s;
                             .ivu-menu-item{
                                 height: 50px;

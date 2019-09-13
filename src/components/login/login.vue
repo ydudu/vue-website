@@ -1,8 +1,8 @@
 <template>
-  <div class="login-wrapper" v-if="show">
+  <div class="login-wrapper animated fadeIn" v-if="show">
     <Row type="flex" justify="center" align="middle" style="height:100%">
       <Col>
-        <div class="login animated">
+        <div class="login">
           <Icon
             @click.native="hideLogin"
             type="md-close"
@@ -39,25 +39,52 @@ export default {
       pass: ""
     };
   },
+  created(){
+    this.name =  this.getCookie('username')
+    let that = this
+    document.onkeypress = function(e) {
+      var keycode = document.all ? event.keyCode:e.which //document.all为真表示兼容ie
+      if(keycode == 13) {
+         that.submit()
+         return false
+      }
+    }
+  },
   methods: {
     hideLogin() {
       this.$emit("isShow", false);
     },
+    //设置cookie
+    setCookie(name,value,iDay) {
+      let oDate = new Date()
+      oDate.setDate(oDate.getDate()+iDay)
+      document.cookie =name+'='+value+';expires='+oDate;
+    },
+    //获取cookie
+    getCookie(name){
+      let arr = document.cookie.split('; ');
+      for(let i=0;i<arr.length;i++){
+        let arr2 = arr[i].split('=');
+        if(arr2[0] == name) {
+          return arr2[1]
+        }
+      }
+      return ''
+    },
+    //清楚cookie
+    removeCookie(name) {
+      setCookie(name,1-1)
+    },
     submit(e) {
-      // console.log(e)
-      // e.defaultPrevented
       var formData = new FormData();
       formData.append("name", this.name);
       formData.append("pass", this.pass);
-
       let config = {
         headers: {
           "Content-Type": "multipart/form-data"
         }
       };
-
-      this.$ajax
-        .post(
+      this.$ajax.post(
           "https://bird.ioliu.cn/v1?url=http://www.shine20.com/text.php",
           formData,
           config
@@ -65,12 +92,14 @@ export default {
         .then(res => {
             let username = res.data.text[0].name;
             let userpass = res.data.text[0].pass;
+            //用户名和密码都正确
             if (this.name == username && this.pass == userpass) {
               this.$router.push("/");
               this.$emit("isShow", false);
+              this.$emit('logShow', false);
               this.$Message.success("登录成功");
-              this.name = "";
-              this.pass = "";
+              this.setCookie('username',this.name,1)
+            
             } else if (this.name.length == 0) {
               this.$Notice.error({
                 title: "请输入用户名",
@@ -111,7 +140,7 @@ export default {
   background: rgba(55, 55, 55, 0.6);
   z-index: 1000;
   .login {
-    background: #fff;
+    background: hsla(0,0%,100%,.9);
     width: 400px;
     border-radius: 6px;
     padding: 80px 20px;
