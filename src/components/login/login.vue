@@ -1,13 +1,12 @@
 <template>
   <div class="login-wrapper" v-if="show">
     <Row type="flex" justify="center" align="middle" style="height:100%">
-      <Col :xs="24" :sm="16" :md="16" :lg="8">
+      <Col>
         <div class="login animated">
           <Icon
             @click.native="hideLogin"
             type="md-close"
             size="30"
-            color="#4a6e9f"
             class="hover-icon"
           />
           <i-form :label-width="70">
@@ -64,7 +63,6 @@ export default {
           config
         )
         .then(res => {
-          if (res.status == 200) {
             let username = res.data.text[0].name;
             let userpass = res.data.text[0].pass;
             if (this.name == username && this.pass == userpass) {
@@ -75,17 +73,17 @@ export default {
               this.pass = "";
             } else if (this.name.length == 0) {
               this.$Notice.error({
-                title: "no user",
+                title: "请输入用户名",
                 duration: 1
               });
             } else if (this.pass.length == 0) {
               this.$Notice.error({
-                title: "no pass",
+                title: "请输入密码",
                  duration: 1
               });
             } else if (this.name.length == 0 && this.pass.length == 0) {
               this.$Notice.error({
-                title: "no user",
+                title: "请输入用户名",
                 duration: 1
               });
             } else {
@@ -94,7 +92,6 @@ export default {
                 content: "用户名或密码错误"
               });
             }
-          }
         })
         .catch(err => {
           console.log("失败" + err);
@@ -115,16 +112,22 @@ export default {
   z-index: 1000;
   .login {
     background: #fff;
-    width: 100%;
+    width: 400px;
     border-radius: 6px;
-    padding: 60px 10px;
+    padding: 80px 20px;
     position: relative;
+    @media screen and (max-width: 768px) {
+      width: 100vw;
+    }
     .hover-icon {
       position: absolute;
       right: 0;
-      top: 2px;
+      top: 0;
       &:hover {
         cursor: pointer;
+        background: red;
+        color: #fff;
+        // border: 1px solid #000;
       }
     }
     .btn-login {

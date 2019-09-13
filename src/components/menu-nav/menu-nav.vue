@@ -43,19 +43,19 @@
                     </Drawer>
                     <MenuItem name="3-1">
                         <a class="resume-a" href="https://ydudu.github.io/my-website" target="_blank">
-                            <Icon type="ios-construct" /> 简历
+                            <Icon type="ios-construct" /> 项目
                         </a>
                     </MenuItem>
                     <MenuItem name="7" to="/message">
                         <Icon type="ios-create-outline" />
                         {{message.title}}
                     </MenuItem>
-                    <div style="position: relative;">
+                    <MenuItem name="8" style="position: relative;" class="item-login">
                         <ButtonGroup shape="circle">
                             <Button type="success" ghost @click.native="loginChange">登录</Button>
                             <Button type="info" ghost @click.native="regin">注册</Button>
                          </ButtonGroup>
-                    </div>
+                    </MenuItem>
                 </Menu>
             </Col>
             <login :show="show" @isShow="acceptIsShow"></login>
@@ -202,6 +202,11 @@
                             &:hover{
                                 color: #fff;
                             }
+                        }
+                        .item-login{
+                            float: right;
+                            position: relative;
+                            padding-right: 10px;
                         }
                     }
                 }

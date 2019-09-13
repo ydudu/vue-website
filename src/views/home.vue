@@ -1,7 +1,11 @@
 <template>
     <div class="home">
         <menu-nav></menu-nav>
-        <router-view/>
+        <transition enter-active-class="animated fadeIn">
+            <keep-alive>
+                <router-view/>
+            </keep-alive>
+        </transition>
     </div>
 </template>
 <script>
