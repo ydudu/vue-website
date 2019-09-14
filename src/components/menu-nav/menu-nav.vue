@@ -187,11 +187,11 @@
             },
             //登录成功隐藏掉登录注册界面，显示个人中心
             changeLog(e){
-                this.logShow = e
+                this.logShow = e 
             },
             regin() {
                 this.$Modal.warning({
-                     title: '注册正在开发',
+                     title: '注册功能正在开发',
                     //  content: '用户名或密码错误'
                 })
             },

@@ -101,20 +101,11 @@ export default {
               this.setCookie('username',this.name,1)
             
             } else if (this.name.length == 0) {
-              this.$Notice.error({
-                title: "请输入用户名",
-                duration: 1
-              });
+              this.$Message.warning('请输入用户名');
             } else if (this.pass.length == 0) {
-              this.$Notice.error({
-                title: "请输入密码",
-                 duration: 1
-              });
+              this.$Message.warning('请输入密码');
             } else if (this.name.length == 0 && this.pass.length == 0) {
-              this.$Notice.error({
-                title: "请输入用户名",
-                duration: 1
-              });
+              this.$Message.warning('请输入用户名');
             } else {
               this.$Modal.error({
                 title: "错误",
