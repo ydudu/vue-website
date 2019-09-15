@@ -59,11 +59,14 @@
                     <MenuItem name="9" class="item-login" v-if="!logShow">
                         <Dropdown>
                             <a href="javascript:void(0)" >
+                                <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
                                 个人中心
                                 <Icon type="ios-arrow-down"></Icon>
                             </a>
                             <DropdownMenu slot="list">
-                                <DropdownItem>修改资料</DropdownItem>
+                                <DropdownItem>
+                                     <router-link to="/perCenter">修改资料</router-link>
+                                </DropdownItem>
                                 <DropdownItem @click.native="singOut">退出登录</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -137,7 +140,7 @@
                                    个人中心
                                    <Icon type="ios-arrow-down"></Icon>
                                 </a> 
-                                <MenuItem name="5-11">
+                                <MenuItem name="5-11" to="/perCenter">
                                     修改资料
                                 </MenuItem>
                                 <MenuItem name="5-12" @click.native="singOut" >
@@ -219,6 +222,7 @@
         .layout{
             .ivu-row{
                 .ivu-col-span-xs-0{
+                    box-shadow:0px 2px 5px rgba(0,0,0,0.5);
                     .ivu-menu{
                         height: 50px;
                         line-height: 50px;

@@ -204,7 +204,6 @@
         },
         created(){
             wea().then(res=>{
-                console.log(res.data)
                 this.city = res.data.city
                 this.dataArray = res.data.data[0]
                 this.weaimgUrl = `https://xuesax.com/tianqiapi/skin/cake/${this.dataArray.wea_img}.png`

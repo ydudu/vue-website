@@ -10,13 +10,14 @@
             class="hover-icon"
           />
           <i-form :label-width="70">
-            <Form-item label="用户名：" prop="name">
-              <i-input v-model="name" placeholder="用户名"></i-input>
-            </Form-item>
-            <Form-item label="密码：" prop="pass">
-              <i-input type="password" v-model="pass" placeholder="密码"></i-input>
-            </Form-item>
-            <i-button class="btn-login" type="primary" @click.prevent="submit($event)">登录</i-button>
+              <i-input v-model="name" placeholder="请输入用户名"></i-input>
+              <br>
+              <br> 
+              <i-input type="password" v-model="pass" placeholder="请输入密码"></i-input>
+              <br>
+              <br>
+              <br>
+              <i-button class="btn-login" type="primary" @click.prevent="submit($event)" long>登录</i-button>
           </i-form>
         </div>
       </Col>
@@ -94,7 +95,7 @@ export default {
             let userpass = res.data.text[0].pass;
             //用户名和密码都正确
             if (this.name == username && this.pass == userpass) {
-              this.$router.push("/");
+              this.$router.push("/perCenter");
               this.$emit("isShow", false);
               this.$emit('logShow', false);
               this.$Message.success("登录成功");
@@ -149,10 +150,6 @@ export default {
         color: #fff;
         // border: 1px solid #000;
       }
-    }
-    .btn-login {
-      position: absolute;
-      right: 2em;
     }
   }
 }

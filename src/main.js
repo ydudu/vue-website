@@ -9,7 +9,7 @@ import './assets/reset/reset.css'
 import './assets/ScssRem/ScssRem.js'
 import animated from 'animate.css'
 import Viewer from 'v-viewer'
-import 'viewerjs/dist/viewer.css'
+import 'viewerjs/dist/viewer.css' //图片浏览组件
 import axios from 'axios'
 import VueLazyload from 'vue-lazyload' //懒加载插件
 import './assets/iconFont/iconfont.js' //svg图标引用js

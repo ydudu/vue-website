@@ -46,6 +46,14 @@ export default [
                     title: '留言'
                 }
             },
+            {
+                path: "/perCenter",
+                name: "perCenter",
+                component: () => import('@/views/perCenter.vue'),
+                meta: {
+                    title: '个人中心'
+                }
+            },
         ],
     },
     // {
