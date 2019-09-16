@@ -65,7 +65,7 @@
                             </a>
                             <DropdownMenu slot="list">
                                 <DropdownItem>
-                                     <router-link to="/perCenter">修改资料</router-link>
+                                     <router-link to="/perCenter">个人资料</router-link>
                                 </DropdownItem>
                                 <DropdownItem @click.native="singOut">退出登录</DropdownItem>
                             </DropdownMenu>
@@ -141,7 +141,7 @@
                                    <Icon type="ios-arrow-down"></Icon>
                                 </a> 
                                 <MenuItem name="5-11" to="/perCenter">
-                                    修改资料
+                                    个人资料
                                 </MenuItem>
                                 <MenuItem name="5-12" @click.native="singOut" >
                                     退出登录
@@ -200,6 +200,7 @@
             },
             //退出登录
             singOut() {
+                this.$router.push('/') //重定向到上一层进入时的页面
                 this.logShow = true
                 this.show = true
             }
@@ -307,6 +308,7 @@
                             left: 0;
                             margin-top: -50px;
                             padding-top: 45px;
+                            z-index:999;
                             background: rgb(54, 58, 58);
                             transition: all .4s;
                             .ivu-menu-item{

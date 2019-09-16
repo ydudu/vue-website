@@ -12,7 +12,6 @@ export default [
                 meta: {
                     title: '主页'
                 }
-
             },
             {
                 path:"/about",
@@ -52,7 +51,19 @@ export default [
                 component: () => import('@/views/perCenter.vue'),
                 meta: {
                     title: '个人中心'
-                }
+                },
+                children: [
+                    {
+                        path: "/OneMenus",
+                        name: "OneMenus",
+                        component: () => import('@/views/perChild/OneMenus.vue')
+                    },
+                    {
+                        path: "/changeMenus",
+                        name: "changeMenus",
+                        component: () => import('@/views/perChild/changeMenus.vue')
+                    }
+                ]
             },
         ],
     },

@@ -10,10 +10,12 @@
             class="hover-icon"
           />
           <i-form :label-width="70">
-              <i-input v-model="name" placeholder="请输入用户名"></i-input>
+              <label for="user">用户名</label>
+              <i-input v-model="name" id="user" placeholder="请输入用户名"></i-input>
               <br>
               <br> 
-              <i-input type="password" v-model="pass" placeholder="请输入密码"></i-input>
+              <label for="pass">密码</label>
+              <i-input id="pass" type="password" v-model="pass" placeholder="请输入密码"></i-input>
               <br>
               <br>
               <br>
@@ -95,7 +97,7 @@ export default {
             let userpass = res.data.text[0].pass;
             //用户名和密码都正确
             if (this.name == username && this.pass == userpass) {
-              this.$router.push("/perCenter");
+              this.$router.push("/perCenter"); //登录成功跳转到该页面
               this.$emit("isShow", false);
               this.$emit('logShow', false);
               this.$Message.success("登录成功");
@@ -139,6 +141,13 @@ export default {
     position: relative;
     @media screen and (max-width: 768px) {
       width: 100vw;
+    }
+    label{
+      display: inline-block;
+      font-size: 16px;
+      float: left;
+      max-width: 100%;
+      margin-bottom: 5px;
     }
     .hover-icon {
       position: absolute;
