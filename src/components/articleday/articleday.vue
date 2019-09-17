@@ -16,8 +16,12 @@
 </template>
 
 <script>
+    import {Col,Card,Button} from 'iview'
     export default {
         name: "articleday",
+        components:{
+            Col,Card,Button
+        },
         data () {
             return {
                 resData: [],

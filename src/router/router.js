@@ -48,6 +48,7 @@ export default [
             {
                 path: "/perCenter",
                 name: "perCenter",
+                redirect: '/OneMenus',
                 component: () => import('@/views/perCenter.vue'),
                 meta: {
                     title: '个人中心'
@@ -56,12 +57,18 @@ export default [
                     {
                         path: "/OneMenus",
                         name: "OneMenus",
-                        component: () => import('@/views/perChild/OneMenus.vue')
+                        component: () => import('@/views/perChild/OneMenus.vue'),
+                        meta: {
+                            requireAuth: true
+                        }
                     },
                     {
                         path: "/changeMenus",
                         name: "changeMenus",
-                        component: () => import('@/views/perChild/changeMenus.vue')
+                        component: () => import('@/views/perChild/changeMenus.vue'),
+                        meta: {
+                            requireAuth: true
+                        }
                     }
                 ]
             },

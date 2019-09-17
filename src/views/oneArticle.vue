@@ -12,9 +12,10 @@
     import titleimg from '@/components/titleimg/titleimg'
     import articleDay from '@/components/articleday/articleday'
     import footerTable from '@/components/footer/footer'
+    import {Row} from 'iview'
     export default {
         name: "oneArticle",
-        components: {titleimg, articleDay, footerTable},
+        components: {titleimg, articleDay, footerTable, Row},
         data () {
             return {
                 imgTitleurl: "http://p19.qhimg.com/t017e9207ba6c5f63e9.jpg"

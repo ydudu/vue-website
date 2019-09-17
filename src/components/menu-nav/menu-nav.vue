@@ -37,7 +37,7 @@
                         <Icon type="ios-musical-notes" />
                         <span>{{music.title}}</span>
                     </MenuItem>
-                    <Drawer title="Music" :scrollable="false" v-model="value1" width="100">
+                    <Drawer title="Music" :scrollable="false" v-model="value1"  width="100">
                         <Music v-if="value1">
                         </Music>
                     </Drawer>
@@ -122,7 +122,7 @@
                             </MenuItem>
                             <MenuItem name="5-6">
                                 <a href="https://ydudu.github.io/my-website" target="_blank">
-                                    <Icon type="ios-construct" /> 简历
+                                    <Icon type="ios-construct" /> 项目
                                 </a>
                             </MenuItem>
                             <MenuItem name="5-7" to="/message">
@@ -158,6 +158,8 @@
     import vue from 'vue'
     import login from '../login/login'
     import {mapState} from 'vuex'
+    import {Layout, Header,Row, Col, Menu, MenuItem, Icon,Dropdown,DropdownMenu,DropdownItem, 
+    Avatar,Submenu,MenuGroup,ButtonGroup,Button,Drawer} from 'iview'
     // import Music from '../music/music'
     export default {
         name: "home",
@@ -174,8 +176,11 @@
            
         },
         components: { 
-            Music:() =>import('../music/music.vue')  ,
-            login
+            Music:() =>import('../music/music.vue'),
+            Drawer,
+            login,
+            Layout, Header,Row, Col, Menu, MenuItem, Icon,Dropdown,DropdownMenu,DropdownItem, 
+    Avatar,Submenu,MenuGroup,ButtonGroup,Button,Drawer
         },
         methods: {
             handleRotate () {

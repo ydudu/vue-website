@@ -9,18 +9,18 @@
             size="30"
             class="hover-icon"
           />
-          <i-form :label-width="70">
+          <Form :label-width="70">
               <label for="user">用户名</label>
-              <i-input v-model="name" id="user" placeholder="请输入用户名"></i-input>
+              <Input v-model="name" id="user" placeholder="请输入用户名"></Input>
               <br>
               <br> 
               <label for="pass">密码</label>
-              <i-input id="pass" type="password" v-model="pass" placeholder="请输入密码"></i-input>
+              <Input id="pass" type="password" v-model="pass" placeholder="请输入密码"></Input>
               <br>
               <br>
               <br>
-              <i-button class="btn-login" type="primary" @click.prevent="submit($event)" long>登录</i-button>
-          </i-form>
+              <Button class="btn-login" type="primary" @click.prevent="submit($event)" long>登录</Button>
+          </Form>
         </div>
       </Col>
     </Row>
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import {Row,Col,Icon,Form,Input,Button} from 'iview'
 export default {
   name: "login",
   props: {
@@ -35,6 +36,9 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  components: {
+    Row,Col,Icon,Form,Input,Button
   },
   data() {
     return {
@@ -97,7 +101,7 @@ export default {
             let userpass = res.data.text[0].pass;
             //用户名和密码都正确
             if (this.name == username && this.pass == userpass) {
-              this.$router.push("/perCenter"); //登录成功跳转到该页面
+              this.$router.push("/perCenter"); //登录成功跳转到个人中心
               this.$emit("isShow", false);
               this.$emit('logShow', false);
               this.$Message.success("登录成功");

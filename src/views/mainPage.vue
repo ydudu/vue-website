@@ -187,9 +187,10 @@
     import articleDay from '@/components/articleday/articleday'
     import iconSvg from '@/components/icon/icon'
     import {wea} from '../api/api'
+    import {Row, Col, Card, Tag} from 'iview'
     export default {
         name: "mainPage",
-        components: { footerTable, titleimg, articleDay, iconSvg},
+        components: {footerTable, titleimg, articleDay, iconSvg, Row, Col, Card, Tag},
         data() {
             return {
                 imgUrl: {

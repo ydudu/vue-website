@@ -8,8 +8,12 @@
 </template>
 
 <script>
+    import {Spin, Icon} from 'iview'
     export default {
-        name: "loading"
+        name: "loading",
+        components: {
+            Spin, Icon
+        }
     }
 </script>
 

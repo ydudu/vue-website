@@ -19,5 +19,10 @@ router.beforeEach((to, from, next) => {
         }
     }
     next()
+    if(to.meta.requireAuth) {
+        next()
+    }else{
+        
+    }
 });
 export default router

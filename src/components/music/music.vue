@@ -3,7 +3,7 @@
         <AutoComplete
                 class="inputSearch"
                 v-model="inputValue"
-                @on-change="getSearch"
+                :transfer ="true"
                 icon="ios-search"
                 placeholder="搜索"
                 style="width:300px">
@@ -113,11 +113,12 @@
 </template>
 
 <script>
+    import {Row,Col,AutoComplete,Icon,Option} from 'iview'
     import progressBar from '../progress-bar/progress-bar'
     import {getAllListHot,songList,search} from '../../api/api.js'
     export default {
         name: "music",
-        components: { progressBar},
+        components: { progressBar,AutoComplete,Icon,Option,Row,Col},
         data () {
             return {
                 musicData: [],

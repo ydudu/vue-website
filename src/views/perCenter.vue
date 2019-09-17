@@ -31,6 +31,7 @@
 
 <script>
  import titleimg from '@/components/titleimg/titleimg'
+ import {Layout,Header,Sider,Menu,MenuItem,Icon,Content} from 'iview'
 export default {
     name: 'perCenter',
     data () {
@@ -40,7 +41,7 @@ export default {
             };
         },
         components: {
-            titleimg
+            titleimg,Layout,Header,Sider,Menu,MenuItem,Icon,Content
         },
         computed: {
             menuitemClasses: function () {

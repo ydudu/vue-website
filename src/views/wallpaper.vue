@@ -24,9 +24,10 @@
     import titleimg from '@/components/titleimg/titleimg'
     import loading from '@/components/loading/loading'
     import footerTable from '@/components/footer/footer'
+    import {Icon} from 'iview'
     export default {
         name: "wallpaper",
-        components:{ titleimg, loading, footerTable},
+        components:{ titleimg, loading, footerTable,Icon},
         data() {
             return {
                 items: [],

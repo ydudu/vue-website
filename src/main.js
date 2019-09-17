@@ -1,9 +1,9 @@
 import Vue from "vue";
+// import iView from 'iview/dist/iview.js'
+// import 'iview/dist/styles/iview.css'
 import App from "./App.vue";
 import router from "./router";
 import store from "./store/index";
-import iView from 'iview'
-import 'iview/dist/styles/iview.css'
 import './assets/my-theme/index.less';
 import './assets/reset/reset.css'
 import './assets/ScssRem/ScssRem.js'
@@ -13,7 +13,10 @@ import 'viewerjs/dist/viewer.css' //图片浏览组件
 import axios from 'axios'
 import VueLazyload from 'vue-lazyload' //懒加载插件
 import './assets/iconFont/iconfont.js' //svg图标引用js
+import {Button,Modal,Message} from 'iview'
 
+Vue.prototype.$Modal = Modal
+Vue.prototype.$Message = Message
 
 Vue.use(Viewer,{
     defaultOptions: {
@@ -27,7 +30,7 @@ Vue.prototype.$ajax = axios;
 
 Vue.use(animated);
 Vue.config.productionTip = false;
-Vue.use(iView);
+// Vue.use(iView);
 
 //添加script标签
 Vue.prototype.$loadScript = (url, callback) => {
