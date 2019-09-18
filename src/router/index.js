@@ -20,9 +20,15 @@ router.beforeEach((to, from, next) => {
     }
     next()
     if(to.meta.requireAuth) {
-        next()
+        if(sessionStorage.getItem('username')&&sessionStorage.getItem('userpass')){
+            next() //已登录
+        }else{
+            next({
+                path: '/'
+            })
+        }
     }else{
-        
+        next()
     }
 });
 export default router

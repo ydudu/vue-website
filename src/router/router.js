@@ -51,7 +51,8 @@ export default [
                 redirect: '/OneMenus',
                 component: () => import('@/views/perCenter.vue'),
                 meta: {
-                    title: '个人中心'
+                    title: '个人中心',
+                    requireAuth: true
                 },
                 children: [
                     {

@@ -182,6 +182,12 @@
             Layout, Header,Row, Col, Menu, MenuItem, Icon,Dropdown,DropdownMenu,DropdownItem, 
     Avatar,Submenu,MenuGroup,ButtonGroup,Button,Drawer
         },
+        created() {
+            //如果有登录记录显示个人中心
+            if(sessionStorage.getItem('username')&&sessionStorage.getItem('userpass')){
+                this.logShow = false
+            }
+        },
         methods: {
             handleRotate () {
                 this.isCollapsed = !this.isCollapsed;

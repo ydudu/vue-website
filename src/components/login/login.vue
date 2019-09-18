@@ -43,11 +43,12 @@ export default {
   data() {
     return {
       name: "",
-      pass: ""
+      pass: "",
     };
   },
   created(){
-    this.name =  this.getCookie('username')
+    this.name =  sessionStorage.getItem('username')
+    this.pass = sessionStorage.getItem('userpass')
     let that = this
     document.onkeypress = function(e) {
       var keycode = document.all ? event.keyCode:e.which //document.all为真表示兼容ie
@@ -105,8 +106,8 @@ export default {
               this.$emit("isShow", false);
               this.$emit('logShow', false);
               this.$Message.success("登录成功");
-              this.setCookie('username',this.name,1)
-            
+              sessionStorage.setItem('username',this.name)
+              sessionStorage.setItem('userpass',this.pass)
             } else if (this.name.length == 0) {
               this.$Message.warning('请输入用户名');
             } else if (this.pass.length == 0) {
