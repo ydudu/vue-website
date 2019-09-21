@@ -234,7 +234,7 @@
         .layout{
             .ivu-row{
                 .ivu-col-span-xs-0{
-                    box-shadow:0px 2px 5px rgba(0,0,0,0.5);
+                    box-shadow:0px 1px 5px rgba(0,0,0,0.4);
                     .ivu-menu{
                         height: 50px;
                         line-height: 50px;
